@@ -44,3 +44,29 @@ cp .env.example .env.local
 
 # Run the development server
 npm run dev
+## **🚀 CODESPACES SETUP STEPS:**
+
+### **Step 1: Create files in this order:**
+1. `package.json`
+2. `tailwind.config.ts`
+3. `next.config.js`
+4. `tsconfig.json`
+5. `postcss.config.js`
+6. `app/globals.css`
+7. `app/layout.tsx`
+8. `app/page.tsx`
+9. `app/(auth)/login/page.tsx`
+10. `app/(auth)/signup/page.tsx`
+11. `app/(dashboard)/dashboard/page.tsx`
+12. `app/(dashboard)/generate/page.tsx`
+13. `lib/supabase/client.ts`
+14. `lib/openai/engine.ts`
+15. `app/api/generate/route.ts`
+16. `middleware.ts`
+17. `.env.example`
+18. `README.md`
+
+### **Step 2: Run these commands:**
+```bash
+npm install
+npm run dev
