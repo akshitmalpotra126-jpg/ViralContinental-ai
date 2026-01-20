@@ -29,3 +29,28 @@ export const config = {
     '/generate/:path*',
   ],
 }
+// Temporary dummy middleware for build
+export async function middleware(req: any) {
+  const res = { next: () => ({}) } // dummy response object
+  // Simulate no session
+  const session = null
+
+  // Protect dashboard routes
+  if (req.nextUrl?.pathname?.startsWith('/dashboard') && !session) {
+    return { redirect: '/login' }
+  }
+
+  // Protect generate routes
+  if (req.nextUrl?.pathname?.startsWith('/generate') && !session) {
+    return { redirect: '/login' }
+  }
+
+  return res.next()
+}
+
+export const config = {
+  matcher: [
+    '/dashboard/:path*',
+    '/generate/:path*',
+  ],
+}
